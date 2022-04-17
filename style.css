@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); /*font-family: 'Oswald', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #E84855;
+    --yellow: #FFFD82;
+    --blue: #2B3A67;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Oswald', sans-serif; 
+    background-color: var(--blue);
+    color: #fff;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav {
+    background-color: var(--red);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+nav a {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 2.5rem;
+}
+
+nav a:hover {
+    animation: colour-changer 3s infinite alternate;
+}
+
+@keyframes colour-changer {
+    0% {
+        color: #fff;
+        background-color: var(--red);
+    }
+
+    33% {
+        color: var(--blue);
+        background-color: var(--yellow);
+    }
+
+
+    66% {
+        color: var(--red);
+        background-color: var(--blue);
+    }
+
+    100% {
+        color: #000;
+        background-color: #c1c1c1;
+    }
+}
+
+header {
+    height: 100vh;
+    background-image: url(img/background.jpg);
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*This is what puts a layer of black on the image that acts as an overlay for the text*/
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+header * {
+    position: relative;
+    z-index: 1;
+    /*the header content goes on top of the overlay*/
+}
+
+header h1 {
+    font-size: 10rem;
+    margin-bottom: 3rem;
+}
+
+header h1:hover {
+    animation: header 2s infinite alternate;
+}
+
+@keyframes header {
+    100%,0%{
+        color: rgb(255,0,0);
+        font-size: 10rem;
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+        font-size: 15rem;
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}
+
+header p {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    text-align: center;
+    padding-bottom: 4rem;
+    text-transform: capitalize;
+}
+
+#projects {
+    background-color: var(--yellow);
+    color: #000;
+}
+
+#projects h2 {
+    font-size: 3rem;
+    padding-top: 1rem;
+}
+
+.project .fa-ghost {
+/*     display: none; */
+    opacity: 0;
+    padding: 0 2rem;
+    transition: opacity 1s;
+}
+.project:hover .fa-ghost {
+    opacity: 1;
+    /* display: inline-block; */
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 660px;
+    margin: 1rem auto 0;
+
+}
+
+.project-container .project {
+    margin: 1.5rem;/*15px*/
+    max-width: 300px;
+    transition: transform 0.5s ease;
+}
+
+.project-container .project:hover {
+    transform: scale(1.1);
+}
+
+.project-container img {
+    max-width: 100%;
+}
+
+.project-container p {
+    font-size: 2rem;
+}
+
+.project-container a {
+    color: #000;
+}
+
+.best a:hover {
+    animation: best 5s infinite forwards alternate;
+}
+
+@keyframes best {
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    25%{
+        color: rgb(56, 113, 0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(5, 151, 78);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}
+
+#socials {
+    background-color: var(--blue);
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#socials h2 {
+    font-size: 6rem;
+}
+
+#socials p {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+}
+
+#socials ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#socials li {
+    font-size: 2.5rem;
+    list-style-type: none;
+    padding: 0 2rem .24rem 2rem;
+    margin: 1rem;
+    transition: transform ease-in-out .5s;
+}
+
+#socials li:hover {
+    transform: translateY(40%);
+}
+
+#socials .fa-brands, .fa-solid {
+    padding-right: 0.5rem;
+    color: var(--red);
+}
+
+footer {
+    background-color: var(--red);
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem 0;
+}
+
+footer a {
+    animation: best 10s infinite forwards alternate;
+}
+
+@media(max-width: 600px){
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px){
+    #socials ul {
+        flex-direction: column;
+    }
+}
